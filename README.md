@@ -16,6 +16,9 @@ to execute one of the provided applications:
 
 	$ make -C <application> simulate
 
+By default, applications are executed with a five minute time budget and
+~symex-vp` stops executing upon encountering the first error.
+
 # Description
 
 As described in the `symex-vp` repo, there are basically
