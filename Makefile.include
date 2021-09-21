@@ -1,0 +1,49 @@
+##
+# RIOT Configuration
+##
+
+# Force DEVELHELP
+override DEVELHELP = 1
+
+# Default to the hifive1
+BOARD ?= hifive1
+
+# Disable verbose build by default
+QUIET ?= 1
+
+# This has to be the absolute path to the RIOT base directory
+ROOTBASE = $(CURDIR)/../
+RIOTBASE = $(ROOTBASE)/RIOT
+
+# Skip boot message to speed up execution
+CFLAGS += -DCONFIG_SKIP_BOOT_MSG
+
+# Verbose assertions for better debugging
+CFLAGS += -DDEBUG_ASSERT_VERBOSE
+
+# Reduce default log file to speed up execution
+CFLAGS += -DLOG_LEVEL=0
+
+# Add symex.h to include path
+CFLAGS += -I$(ROOTBASE)/include
+
+##
+# Custom targets
+##
+
+# Time budget for symbolic execution.
+export SYMEX_TIMEBUDGET = $(shell expr 5 \* 60)
+
+simulate:
+	find "$(ROOTBASE)" -name '*.gcov.json.gz' -exec rm -f {} +
+	hifive-vp "$(ELFFILE)"
+
+.PHONY: simulate
+
+include $(RIOTBASE)/Makefile.include
+
+# symex-vp currently only supports RV32IMC.
+CFLAGS += -march=rv32imc -mabi=ilp32
+
+# optimize for performance instead of size.
+CFLAGS += -O2
