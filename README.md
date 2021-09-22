@@ -28,7 +28,7 @@ explains how these aspects are implemented in the RIOT context.
    peripheral. Functions for interacting with this peripheral are
    available in `./include/symex.h`.
 2. **Termination Points:** Termination points are also declared
-   explicitly by invoking `vp_symbolic_ctrl(SYMEX_ERROR)` from
+   explicitly by invoking `vp_symbolic_ctrl(SYMEX_EXIT)` from
    `./include/symex.h` after performed tests are completed.
 3. **Path Analyzers:** For clarity, no specific path analyzer is
    employed in this repository. However, we discuss such path analyzer

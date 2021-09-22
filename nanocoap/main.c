@@ -21,6 +21,6 @@ int main(void)
     vp_make_symbolic(buf, len);
     coap_parse(&pkt, buf, len);
 
-    vp_symbolic_ctrl(SYMEX_ERROR);
+    vp_symbolic_ctrl(SYMEX_EXIT);
     return 0;
 }

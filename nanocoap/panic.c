@@ -10,5 +10,3 @@ void panic_app(core_panic_t crash_code, const char *message)
 
     vp_symbolic_ctrl(SYMEX_ERROR);
 }
-
-

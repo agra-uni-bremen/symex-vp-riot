@@ -21,6 +21,6 @@ int main(void)
     jsmn_init(&p);
     jsmn_parse(&p, buf, strlen(buf), t, ARRAY_SIZE(t));
 
-    vp_symbolic_ctrl(SYMEX_ERROR);
+    vp_symbolic_ctrl(SYMEX_EXIT);
     return 0;
 }
