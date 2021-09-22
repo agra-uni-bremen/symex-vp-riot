@@ -18,10 +18,10 @@ to execute one of the provided applications:
 
 # Description
 
-As described in the `symex-vp` repo, there are basically [three
-aspects][symex-vp usage] regarding the employment of VP-based concolic
-software testing. The following listing briefly explains how these
-aspects are implemented in the RIOT context.
+As described in the `symex-vp` repo, there are basically
+[three aspects][symex-vp usage] regarding the employment
+of VP-based concolic software testing. The following listing briefly
+explains how these aspects are implemented in the RIOT context.
 
 1. **Symbolic Inputs:** The RIOT applications provided in this
    repository generate symbolic inputs explicitly via the `SymbolicCTRL`
@@ -45,3 +45,4 @@ aspects are implemented in the RIOT context.
 [hardbound-vp]: https://github.com/agra-uni-bremen/hardbound-vp#about
 [stacksize-vp]: https://www.informatik.uni-bremen.de/agra/doc/konf/FDL21_VP_Stacksize.pdf
 [checkedc-vp]: https://www.informatik.uni-bremen.de/agra/doc/konf/DAC-2021-CheckedC-Concolic-Testing.pdf
+[symex-vp usage]: https://github.com/agra-uni-bremen/symex-vp#usage
