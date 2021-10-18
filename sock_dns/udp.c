@@ -3,6 +3,8 @@
 
 #include "symex.h"
 
+#define SYMEX_UDP_PKTSIZ 32
+
 /**
  * Stub implementation of sock_udp which returns symbolic data on read.
  */
@@ -38,7 +40,11 @@ ssize_t sock_udp_recv_aux(sock_udp_t *sock, void *data, size_t max_len,
     (void)remote;
     (void)aux;
 
-    vp_make_symbolic(data, max_len);
+    size_t pktlen = SYMEX_UDP_PKTSIZ;
+    if (pktlen > max_len)
+        pktlen = max_len;
+
+    vp_make_symbolic(data, pktlen);
     return max_len;
 }
 
