@@ -27,6 +27,9 @@ CFLAGS += -DLOG_LEVEL=0
 # Add symex.h to include path
 CFLAGS += -I$(ROOTBASE)/include
 
+# Utilized memory model doesn't allow reason about jump tables presently.
+CFLAGS += -fno-jump-tables
+
 ##
 # Custom targets
 ##
