@@ -47,8 +47,5 @@ simulate:
 
 include $(RIOTBASE)/Makefile.include
 
-# symex-vp currently only supports RV32IMC.
-CFLAGS += -march=rv32imc -mabi=ilp32
-
 # optimize for performance instead of size.
 CFLAGS += -O2
