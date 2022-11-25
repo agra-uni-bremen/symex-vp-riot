@@ -1,6 +1,6 @@
-# symex-vp RIOT
+# SymEx-VP RIOT
 
-Basic application illustrating use of [symex-vp][symex-vp github] with [RIOT][riot web].
+Basic application illustrating use of [SymEx-VP][symex-vp github] with [RIOT][riot web].
 
 # Usage
 
@@ -10,18 +10,18 @@ using:
 
 	$ make -C <application>
 
-Afterwards, a compiled application can be executed with `symex-vp`.
-Assuming that `symex-vp` is in `$PATH`, simply run the following command
+Afterwards, a compiled application can be executed with SymEx-VP.
+Assuming that SymEx-VP is in `$PATH`, simply run the following command
 to execute one of the provided applications:
 
 	$ make -C <application> simulate
 
 By default, applications are executed with a five minute time budget and
-~symex-vp` stops executing upon encountering the first error.
+SymEx-VP stops executing upon encountering the first error.
 
 # Description
 
-As described in the `symex-vp` repo, there are basically
+As described in the SymEx-VP repo, there are basically
 [three aspects][symex-vp usage] regarding the employment
 of VP-based concolic software testing. The following listing briefly
 explains how these aspects are implemented in the RIOT context.
